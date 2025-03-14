@@ -5,8 +5,8 @@ export const UniversoData = () => {
     const [universe, setPlanets] = useState<any[]>([]);
 
     const get = async () => {
-        let data = await getPlanets();
-        setPlanets(data.collection.items);
+        let {collection:{items}} = await getPlanets();
+        setPlanets(items);
     };
 
     useEffect(() => {

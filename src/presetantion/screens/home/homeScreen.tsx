@@ -9,16 +9,30 @@ export const HomeScreen = () => {
 
     return (
     <View style={styles.contentini}>
-      <Text style={styles.titulo}>Turista Espacial</Text>
-      <Text style={styles.saludo}>¡BIENVENIDO!</Text>
+
       <Image 
-        style={styles.imginicio}
-        source={require('../../../imagenes/iniciohm.png')}
+        style={styles.backgroundImage}
+        source={require('../../../imagenes/alienhem.jpg')}
       />
-      <BotonNavegacion
-        label= 'ENTRAR'
-        onPress= { () => navigation.navigate('Universo')}
-      />
+
+      <Text style={styles.titulo}>Turista Espacial</Text>
+
+      <View style={styles.contentsaludo}>
+
+        <Text style={styles.saludo2}>¡BIENVENIDO!</Text>
+        <Text style={styles.saludo1}>¡BIENVENIDO!</Text>
+        <Text style={styles.saludo}>¡BIENVENIDO!</Text>
+
+      </View>
+
+      <View style={styles.contentbtn}>
+
+        <BotonNavegacion
+          label= 'ENTRAR'
+          onPress= { () => navigation.navigate('Universo')}
+        />
+
+      </View>
       
       <StatusBar style="auto" />
     </View>
@@ -28,31 +42,55 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   contentini:
   {
-    justifyContent:'center',
-    backgroundColor: '#212A37',
     alignItems: 'center',
     flex: 1
   },
+  backgroundImage: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+
+  contentsaludo:{
+    justifyContent:'center',
+    alignItems: 'center',
+    marginTop:'97%'
+  },
+  contentbtn:{
+    justifyContent:'center',
+    alignItems: 'center',
+    marginTop:'60%'
+  },
   titulo:
   {
-    color: '#FCFFFE',
-    fontSize: 45,
-    borderColor: 'white',
-    borderBottomWidth: 3,
+    color: '#A3DBDC',
+    fontSize: 40,
+    borderColor: '#A3DBDC',
+    borderBottomWidth: 2, 
+    fontWeight: '700'
   },
   saludo:
   {
-    color: '#FCFFFE',
-    fontSize: 40,
+    color: '#983907',
+    fontSize: 45,
     fontWeight: 'bold',
-    marginTop: 60,
+    position: 'absolute',
+    
   },
-  imginicio:
+  saludo1:
   {
-    marginTop: 40,
-    width: 413,
-    height: 413,
-    borderColor:'#212A37',
-    borderWidth:1
-  }
+    color: '#102636',
+    fontSize: 46,
+    fontWeight: 'bold',
+    position: 'absolute',
+    
+  },
+  saludo2:
+  {
+    color: 'white',
+    fontSize: 46.5,
+    fontWeight: 'bold',
+    position: 'absolute',
+    
+  },
 });
